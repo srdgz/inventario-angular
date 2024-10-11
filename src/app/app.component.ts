@@ -7,7 +7,6 @@ import { ProductoListaComponent } from './producto-lista/producto-lista.componen
   standalone: true,
   imports: [RouterOutlet, ProductoListaComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'inventario-app';
