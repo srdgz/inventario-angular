@@ -28,12 +28,21 @@ export class ProductoListaComponent implements OnInit {
         this.productos = datos;
       },
       error: (error) => {
-        console.error('Error al obtener los productos:', error);
+        console.error('Error al obtener los productos: ', error);
       },
     });
   }
 
   editarProducto(idProducto: number) {
     this.enrutador.navigate(['editar', idProducto]);
+  }
+
+  eliminarProducto(idProducto: number) {
+    this.productoServicio.eliminarProducto(idProducto).subscribe({
+      next: (datos) => this.obtenerProductos(),
+      error: (error) => {
+        console.error('Error al eliminar el procuto: ', error);
+      },
+    });
   }
 }

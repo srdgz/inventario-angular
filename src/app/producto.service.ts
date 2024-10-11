@@ -29,4 +29,8 @@ export class ProductoService {
   ): Observable<Object> {
     return this.clienteHttp.put(`${this.urlBase}/${idProducto}`, producto);
   }
+
+  eliminarProducto(idProducto: number): Observable<Object> {
+    return this.clienteHttp.delete(`${this.urlBase}/${idProducto}`);
+  }
 }
