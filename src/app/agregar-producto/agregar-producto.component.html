@@ -2,10 +2,17 @@
   <div class="container text-center m-5">
     <h3>Añadir nuevo producto</h3>
   </div>
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="nombreProducto" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombreProducto" />
+      <input
+        type="text"
+        class="form-control"
+        id="nombreProducto"
+        name="nombreProducto"
+        required="true"
+        [(ngModel)]="producto.nombreProducto"
+      />
     </div>
     <div class="mb-3">
       <label for="precioProducto" class="form-label">Precio</label>
@@ -14,11 +21,21 @@
         step="any"
         class="form-control"
         id="precioProducto"
+        name="precioProducto"
+        required="true"
+        [(ngModel)]="producto.precioProducto"
       />
     </div>
     <div class="mb-3">
       <label for="cantidadProducto" class="form-label">Cantidad</label>
-      <input type="number" class="form-control" id="cantidadProducto" />
+      <input
+        type="number"
+        class="form-control"
+        id="cantidadProducto"
+        name="cantidadProducto"
+        required="true"
+        [(ngModel)]="producto.cantidadProducto"
+      />
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary btn-md me-3 px-4">
