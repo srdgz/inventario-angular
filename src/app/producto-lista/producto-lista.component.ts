@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../producto.service';
 import { Producto } from '../producto';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-producto-lista',
@@ -12,7 +13,10 @@ import { CommonModule } from '@angular/common';
 export class ProductoListaComponent implements OnInit {
   productos: Producto[] = [];
 
-  constructor(private productoServicio: ProductoService) {}
+  constructor(
+    private productoServicio: ProductoService,
+    private enrutador: Router
+  ) {}
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -27,5 +31,9 @@ export class ProductoListaComponent implements OnInit {
         console.error('Error al obtener los productos:', error);
       },
     });
+  }
+
+  editarProducto(idProducto: number) {
+    this.enrutador.navigate(['editar', idProducto]);
   }
 }
