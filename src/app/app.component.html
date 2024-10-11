@@ -14,9 +14,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ps-3 ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link" aria-current="page" href="/">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/add">Añadir producto</a>
@@ -26,4 +26,6 @@
     </div>
   </nav>
 </div>
-<app-producto-lista></app-producto-lista>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
